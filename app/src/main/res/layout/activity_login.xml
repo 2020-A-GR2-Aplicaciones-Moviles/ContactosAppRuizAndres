@@ -8,11 +8,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="240dp"
-        android:layout_height="209dp"
+        android:layout_width="226dp"
+        android:layout_height="189dp"
         android:layout_marginTop="64dp"
         android:src="@drawable/ic_contactos"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/textEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/textEmail"
         style="@style/Widget.AppCompat.AutoCompleteTextView"
         android:layout_width="281dp"
         android:layout_height="40dp"
@@ -43,12 +43,12 @@
         android:inputType="textPassword"
         android:text="Tu contraseña"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="@+id/textEmail"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintStart_toStartOf="@+id/textEmail" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnLogin"
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="150dp"
         android:layout_height="61dp"
@@ -70,9 +70,9 @@
         android:text="¿Olvidaste tu contraseña?"
         android:textColor="#61a2f9"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="@+id/button" />
+        app:layout_constraintStart_toStartOf="@+id/btnLogin" />
 
     <TextView
         android:id="@+id/textView3"

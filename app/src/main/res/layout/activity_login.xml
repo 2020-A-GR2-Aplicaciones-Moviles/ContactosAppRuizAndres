@@ -52,26 +52,26 @@
         style="@android:style/Widget.DeviceDefault.Button"
         android:layout_width="150dp"
         android:layout_height="61dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginBottom="156dp"
         android:text="Inicia Sesión"
 
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="@+id/editTextTextPassword" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="161dp"
         android:layout_height="19dp"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="120dp"
         android:text="¿Olvidaste tu contraseña?"
         android:textColor="#61a2f9"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnLogin" />
 
     <TextView
@@ -99,5 +99,27 @@
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/chkRecordarme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Recordarme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <CheckBox
+        android:id="@+id/chkBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Borrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toEndOf="@+id/chkRecordarme"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ContactosAppRuizAndres</string>
+    <string name="textViewFirstName">Primer Nombre:</string>
+    <string name="textViewLastName">Segundo Nombre:</string>
+    <string name="textViewPhoneNumber">Número de Teléfono</string>
+    <string name="textViewEmailAddress">Correo Electrónico</string>
+    <string name="buttonSave">Guardar</string>
+    <string name="buttonView">Ver</string>
+    <string name="buttonUpdate">Actualizar</string>
+    <string name="buttonDelete">Borrar</string>
+    <string name="textViewUserId">Id de usuario</string>
+</resources>

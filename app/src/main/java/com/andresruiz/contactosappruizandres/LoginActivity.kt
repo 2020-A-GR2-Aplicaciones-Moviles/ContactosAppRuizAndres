@@ -10,27 +10,25 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import java.util.regex.Pattern
 
 
 class LoginActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        auth = FirebaseAuth.getInstance();
         InicializarArchivoPreferenciasEncriptado()
         LeerDatosDeArchivoPreferenciasEncriptado();
 
         btnLogin.setOnClickListener {
             //email
             if (validarEmail(textEmail.text.toString())) {
-                if(textEmail.text.toString().equals("andres.ruiz@epn.edu.ec") and editTextTextPassword.text.toString().equals("12345678")){
-                    var intent = Intent(this,PrincipalTmpActivity2::class.java)
-                    intent.putExtra(LOGIN_KEY,textEmail.text.toString())
-                    startActivity(intent)
-                    finish()
-                }
+                AutenticarUsuario(textEmail.text.toString(), editTextTextPassword.text.toString())
 
             } else {
                 Toast.makeText(this, "textEmail.text.toString()", Toast.LENGTH_LONG).show();
@@ -46,6 +44,20 @@ class LoginActivity : AppCompatActivity() {
 
 
 
+    }
+    fun AutenticarUsuario(email:String, password:String){
+        auth.signInWithEmailAndPassword(email, password)
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    var intent = Intent(this,PrincipalTmpActivity2::class.java)
+                    intent.putExtra(LOGIN_KEY,auth.currentUser!!.email)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    Toast.makeText(baseContext, task.exception!!.message,
+                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     private fun validarEmail(email: String): Boolean {
